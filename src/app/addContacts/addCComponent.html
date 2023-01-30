@@ -1,0 +1,15 @@
+<p [ngStyle]="{'font-size':'20px'}"> Contact details</p><hr>
+<input required type="text" placeholder="Enter name" [(ngModel)]="userName"><br><br>
+<input required type="number" placeholder="Mobile Number" [(ngModel)]="mobileNum"><br><br>
+<button class="btn btn-info" type="button" (click)="saveContact()"> Save Contact </button><br><br>
+<span *ngIf="isDeleted" class="bgColorErr"> Contact Deleted !!! </span>
+<p *ngIf="(allContacts.length)==1"> Sorry Contacts not available ... <p>
+<table *ngIf="(allContacts.length)>1" class="table table-striped">
+    <thead>
+        <tr *ngFor="let contact of allContacts; let i = index">
+            <th > {{contact.name}} </th>
+            <th > {{contact.mobileNum}} </th>
+            <th *ngIf="i>0"> <button type="button" class="btn btn-danger" (click)="deleteContact(i)"> Delete </button></th>
+        </tr>
+    </thead>
+</table>

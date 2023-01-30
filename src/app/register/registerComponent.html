@@ -1,0 +1,19 @@
+<form >
+    <h1> Create a profile </h1> <hr><br>
+
+    <div *ngIf="missingFields" [ngStyle]="{'color':'red'}">
+        Please enter the Missing details
+    </div> <br>
+    <p> <span> Email : 
+            <input required name="emailAdd" type="email" placeholder="E-mail" [(ngModel)]="emailRequired" #emailV="ngModel"> 
+        </span>
+        <span> &nbsp;&nbsp;Password : 
+            <input required name="password" type="password" placeholder="Password" [(ngModel)]="passwordRequired" #passwordV="ngModel"  >
+        </span></p><br>    
+    <p> Phone : <input required name="phone" type="number" placeholder="1234567890" [(ngModel)]="phoneRequired" #phoneV="ngModel"> </p>
+    <p> Birthday : <input required name="birthday" type="date" ng-model="birthday"  [(ngModel)]="birthdayRequired" #birthdayV="ngModel"> </p><br>
+    <p> By clicking Sign Up, you agree to our <span class="colorBlue"> Terms </span> and <span class="colorBlue"> Policy </span> <br><br>
+    <button class="btn btn-info" type="button" (click)="fieldValidator()" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"> Sign up </button><hr>
+    <!-- <div *ngIf="emailV.errors?.['required'] || passwordV.errors?.['required'] || phoneV.errors?.['required'] || birthdayV.errors?.['required']"> -->
+    <a class="colorBlue" routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page"> Back to login </a>   
+</form>

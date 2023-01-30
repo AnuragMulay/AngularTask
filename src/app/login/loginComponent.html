@@ -1,0 +1,7 @@
+<p *ngIf="false"> Registered with username : </p><hr>
+<h1> Login Form </h1><hr>
+<span *ngIf="false" class="bgColorErr"> Username or password is invalid </span><br><br>
+<input required type="email" [(ngModel)]="emailIdVal" #emailIdref="ngModel" placeholder="Enter Email Id">  &nbsp;&nbsp;
+<input required type="password" [(ngModel)]="passwordVal" #emailIdref="ngModel" placeholder="Enter Password">  &nbsp;&nbsp;
+<button class="btn btn-info" type="button" (click)="loginValidation()" routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page"> Login </button><hr>
+<button class="btn btn-info" type="button" routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Create Profile </button>

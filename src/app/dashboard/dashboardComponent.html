@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a routerLink="/dashboardR" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard </a></li>
+      <li><a routerLink="/addContacts" routerLinkActive="active" ariaCurrentWhenActive="page">Add Contacts </a></li>
+      <li><a routerLink="/showContacts" routerLinkActive="active" ariaCurrentWhenActive="page">Show All Contacts </a></li>
+      <li><a routerLink="/searchContacts" routerLinkActive="active" ariaCurrentWhenActive="page">Search Contacts </a></li>
+      <ul class="nav navbar-nav">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" > Settings <span class="caret">.</span></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/changePass" routerLinkActive="active" ariaCurrentWhenActive="page" >Change Password</a></li>
+            <li><a >Delete Profile</a></li>
+            <li><a >Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </ul>
+</nav>
+<div class="grid-container">
+  <div class="grid-item-left">
+    <p> Profile Summary ! </p><hr>
+    <p [ngStyle]="{'font-weight': 'bold'}"> Birthday : <p>
+    <p [ngStyle]="{'font-weight': 'bold'}"> Mobile : </p>
+  </div>
+  <div class="grid-item-left">
+      <router-outlet></router-outlet>
+  </div>
+</div>
